@@ -7,8 +7,8 @@
     <ProjectGuid>{922D3524-3D6E-4319-926A-FAF2DD20D969}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebApi.Owin</RootNamespace>
-    <AssemblyName>WebApi.Owin</AssemblyName>
+    <RootNamespace>Schott.WebApi.Owin</RootNamespace>
+    <AssemblyName>Schott.WebApi.Owin</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -63,9 +63,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="LICENSE" />
     <None Include="packages.config" />
-    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

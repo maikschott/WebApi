@@ -9,7 +9,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Infrastructure;
 
-namespace WebApi.Owin.Middleware.Authentication.Token
+namespace Schott.WebApi.Owin.Middleware.Authentication.Token
 {
   internal class TokenAuthenticationHandler : AuthenticationHandler<TokenAuthenticationOptions>
   {

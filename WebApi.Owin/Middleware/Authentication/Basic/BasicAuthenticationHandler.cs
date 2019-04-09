@@ -1,13 +1,13 @@
-﻿using Microsoft.Owin.Security.Infrastructure;
-using System;
+﻿using System;
 using System.Net;
 using System.Net.Http.Headers;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Owin.Security;
+using Microsoft.Owin.Security.Infrastructure;
 
-namespace WebApi.Owin.Middleware.Authentication.Basic
+namespace Schott.WebApi.Owin.Middleware.Authentication.Basic
 {
   public class BasicAuthenticationHandler : AuthenticationHandler<BasicAuthenticationOptions>
   {

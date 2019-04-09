@@ -2,7 +2,7 @@
 using Microsoft.Owin.Security.Infrastructure;
 using Owin;
 
-namespace WebApi.Owin.Middleware.Authentication.Basic
+namespace Schott.WebApi.Owin.Middleware.Authentication.Basic
 {
   /// <summary>
   /// OWIN middleware to enable authentication via the "Basic" authentication scheme.<para/>

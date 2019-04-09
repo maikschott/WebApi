@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Owin.Security;
 
-namespace WebApi.Owin.Middleware.Authentication.Token
+namespace Schott.WebApi.Owin.Middleware.Authentication.Token
 {
   public class TokenAuthenticationOptions : AuthenticationOptions
   {
