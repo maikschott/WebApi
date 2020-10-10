@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.539
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schott.WebApi.Owin", "WebApi.Owin\Schott.WebApi.Owin.csproj", "{922D3524-3D6E-4319-926A-FAF2DD20D969}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Masch.WebApi.Owin", "WebApi.Owin\Masch.WebApi.Owin.csproj", "{922D3524-3D6E-4319-926A-FAF2DD20D969}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Masch.WebApi.Owin.Tests", "Schott.WebApi.Owin.Tests\Masch.WebApi.Owin.Tests.csproj", "{4C820E6F-FE4B-4ADD-81F9-2DA7684497D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{922D3524-3D6E-4319-926A-FAF2DD20D969}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{922D3524-3D6E-4319-926A-FAF2DD20D969}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{922D3524-3D6E-4319-926A-FAF2DD20D969}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C820E6F-FE4B-4ADD-81F9-2DA7684497D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C820E6F-FE4B-4ADD-81F9-2DA7684497D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C820E6F-FE4B-4ADD-81F9-2DA7684497D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C820E6F-FE4B-4ADD-81F9-2DA7684497D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

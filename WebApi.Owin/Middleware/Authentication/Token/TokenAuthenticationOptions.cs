@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Owin.Security;
 
-namespace Schott.WebApi.Owin.Middleware.Authentication.Token
+namespace Masch.WebApi.Owin.Middleware.Authentication.Token
 {
   public class TokenAuthenticationOptions : AuthenticationOptions
   {
@@ -18,5 +18,7 @@ namespace Schott.WebApi.Owin.Middleware.Authentication.Token
     public SignatureAlgorithm SignatureAlgorithm { get; set; }
 
     public byte[] Key { get; set; }
+
+    public TimeSpan? Duration { get; set; }
   }
 }

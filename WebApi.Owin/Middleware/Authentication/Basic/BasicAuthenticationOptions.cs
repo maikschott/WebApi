@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Owin.Security;
 
-namespace Schott.WebApi.Owin.Middleware.Authentication.Basic
+namespace Masch.WebApi.Owin.Middleware.Authentication.Basic
 {
   public delegate Task<Claim[]> AuthenticatorDelegate(string username, string password, CancellationToken cancellationToken = default(CancellationToken));
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Infrastructure;
 
-namespace Schott.WebApi.Owin.Middleware.Authentication.Basic
+namespace Masch.WebApi.Owin.Middleware.Authentication.Basic
 {
   public class BasicAuthenticationHandler : AuthenticationHandler<BasicAuthenticationOptions>
   {

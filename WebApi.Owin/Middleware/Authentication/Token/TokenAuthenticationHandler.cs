@@ -9,7 +9,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Infrastructure;
 
-namespace Schott.WebApi.Owin.Middleware.Authentication.Token
+namespace Masch.WebApi.Owin.Middleware.Authentication.Token
 {
   internal class TokenAuthenticationHandler : AuthenticationHandler<TokenAuthenticationOptions>
   {
@@ -27,7 +27,7 @@ namespace Schott.WebApi.Owin.Middleware.Authentication.Token
         if (AuthenticationHeaderValue.TryParse(authorization, out var authenticationHeaderValue) && authenticationHeaderValue.Scheme == Options.AuthenticationType)
         {
           var token = JsonWebToken.Create(authenticationHeaderValue.Parameter, Options.Key);
-          if (token != null)
+          if (token != null && (!token.Payload.TryGetValue("exp", out var expirationObj) || expirationObj is DateTime expirationDate && expirationDate < DateTime.Now))
           {
             var claims = ConvertJwtClaimsToClrClaims(token.Payload);
             if (claims != null)
@@ -59,13 +59,20 @@ namespace Schott.WebApi.Owin.Middleware.Authentication.Token
       return Task.CompletedTask;
     }
 
-    private static IDictionary<string, object> ConvertClrClaimsToJwtClaims(IEnumerable<Claim> claims)
+    private IDictionary<string, object> ConvertClrClaimsToJwtClaims(IEnumerable<Claim> claims)
     {
+      var now = DateTime.Now;
+
       var result = new Dictionary<string, object>
       {
-        ["iat"] = DateTime.Now,
+        ["iat"] = now,
         ["jti"] = Guid.NewGuid().ToString()
       };
+
+      if (Options.Duration.HasValue)
+      {
+        result.Add("exp", now + Options.Duration.Value);
+      }
 
       foreach (var claim in claims)
       {
@@ -103,6 +110,11 @@ namespace Schott.WebApi.Owin.Middleware.Authentication.Token
       foreach (var claim in jwtClaims)
       {
         yield return new Claim(claim.Key, (claim.Value as IFormattable)?.ToString(null, CultureInfo.InvariantCulture) ?? claim.Value?.ToString());
+
+        if (claim.Key == "exp")
+        {
+          yield return new Claim(ClaimTypes.Expiration, ((DateTime?)claim.Value)?.ToString("O"), ClaimValueTypes.DateTime);
+        }
       }
     }
   }

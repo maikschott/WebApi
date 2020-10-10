@@ -1,21 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Security.Cryptography;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace Schott.WebApi.Owin.Middleware.Authentication.Token
+namespace Masch.WebApi.Owin.Middleware.Authentication.Token
 {
-  [SuppressMessage("ReSharper", "InconsistentNaming")]
-  public enum SignatureAlgorithm
-  {
-    None,
-    HMACSHA256,
-    HMACSHA384,
-    HMACSHA512
-  }
-
   internal class JsonWebToken
   {
     private const string AlgHeaderName = "alg";
